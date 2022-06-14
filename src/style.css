@@ -4,3 +4,86 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.header-title {
+  font-size: 55px;
+  margin-bottom: 30%;
+}
+
+.scores-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.recent-scores {
+  width: 40%;
+  height: 300px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-scores-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px;
+  align-items: center;
+}
+
+.scores-list {
+  list-style: none;
+}
+
+.scores-list > *:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.all-scores {
+  padding: 5px;
+  min-height: 220px;
+  max-height: 220px;
+  border: 2px black solid;
+  border-radius: 5%;
+}
+
+.recent-title {
+  font-size: 2.5rem ;
+}
+
+.refresh {
+  padding: 5px 15px;
+}
+
+.list-item {
+  padding: 5px 0px;
+}
+
+.add-header {
+  font-size: 2.5rem;
+  margin: 24px;
+}
+
+.add-scores {
+  margin-right: 15%;
+}
+
+.input {
+  margin-bottom: 25px;
+  padding: 10px 0px 10px 5px;
+  border: 1px black solid;
+}
+
+.submit {
+  width: 20%;
+  align-self: flex-end;
+}
