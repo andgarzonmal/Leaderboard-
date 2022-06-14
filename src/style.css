@@ -1,6 +1,6 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -57,7 +57,7 @@ body {
 }
 
 .recent-title {
-  font-size: 2.5rem ;
+  font-size: 2.5rem;
 }
 
 .refresh {
@@ -65,7 +65,7 @@ body {
 }
 
 .list-item {
-  padding: 5px 0px;
+  padding: 5px 0;
 }
 
 .add-header {
@@ -79,7 +79,7 @@ body {
 
 .input {
   margin-bottom: 25px;
-  padding: 10px 0px 10px 5px;
+  padding: 10px 0 10px 5px;
   border: 1px black solid;
 }
 
