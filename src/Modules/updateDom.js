@@ -4,7 +4,7 @@ const scoreList = document.querySelector('.scores-list');
 
 export const addhtml = ({ user, score }) => `
   <li class="list-item"> 
-    ${user}:${score}
+    ${user}: ${score}
   </li>
 `;
 

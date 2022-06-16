@@ -10,6 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #5534df;
 }
 
 .header-title {
@@ -45,7 +46,11 @@ body {
 }
 
 .scores-list > *:nth-child(odd) {
-  background-color: lightgray;
+  background-color: #8da2ff;
+}
+
+.scores-list > *:nth-child(even) {
+  background-color: #acbaff;
 }
 
 .all-scores {
@@ -66,6 +71,8 @@ body {
 
 .list-item {
   padding: 5px 0;
+  font-size: 25px;
+  color: aliceblue;
 }
 
 .add-header {
