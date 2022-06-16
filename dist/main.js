@@ -110,13 +110,43 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/Modules/getData.js":
+/*!********************************!*\
+  !*** ./src/Modules/getData.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getData\": () => (/* binding */ getData)\n/* harmony export */ });\nconst fetchUrl= \"https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/oeMwIfz4iX4Uqc9HOtgF/scores\"\r\n\r\nconst getData = async () => {\r\n  try {\r\n    const response = await fetch(fetchUrl)\r\n    const data = await response.json()\r\n    return data\r\n  } catch(err) {\r\n    throw new Error(err)\r\n  }\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://my-to-do-list-/./src/Modules/getData.js?");
+
+/***/ }),
+
+/***/ "./src/Modules/updateData.js":
+/*!***********************************!*\
+  !*** ./src/Modules/updateData.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst inputScore = document.getElementById('score-input');\r\nconst inputName = document.getElementById('name-input');\r\n\r\nconst uploadedData = () => {\r\n  const typedData = { \r\n      \"user\": inputName.value,\r\n      \"score\": inputScore.value\r\n    }\r\n  inputName.value = \"\"\r\n  inputScore.value = \"\"\r\n  console.log(typedData)\r\n  return typedData\r\n}\r\n\r\nconst updateData = async () => {\r\n  const response = await fetch(\"https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/oeMwIfz4iX4Uqc9HOtgF/scores\", { \r\n      method: \"POST\",\r\n      body: JSON.stringify(uploadedData()),\r\n      headers: {\r\n        \"Content-Type\": \"application/json\"\r\n      }\r\n  })\r\n  const data = await response.json()\r\n  return data\r\n} \r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (updateData);\r\n\n\n//# sourceURL=webpack://my-to-do-list-/./src/Modules/updateData.js?");
+
+/***/ }),
+
+/***/ "./src/Modules/updateDom.js":
+/*!**********************************!*\
+  !*** ./src/Modules/updateDom.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addhtml\": () => (/* binding */ addhtml),\n/* harmony export */   \"deployData\": () => (/* binding */ deployData)\n/* harmony export */ });\n/* harmony import */ var _getData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getData.js */ \"./src/Modules/getData.js\");\n\r\nconst scoreList = document.querySelector('.scores-list')\r\n\r\nconst addhtml = ({user, score}) => `\r\n  <li class=\"list-item\"> \r\n    ${user}:${score}\r\n  </li>\r\n`\r\n\r\nconst deployData = async () => {\r\n  const {result} = await (0,_getData_js__WEBPACK_IMPORTED_MODULE_0__.getData)();\r\n  scoreList.innerHTML=\"\"\r\n  result.sort((a,b) => b.id - a.id)\r\n  console.log(result)\r\n  result.forEach(element => {\r\n    console.log(element)\r\n    scoreList.insertAdjacentHTML('beforeend', addhtml(element))\r\n  });\r\n}\r\n\r\n\n\n//# sourceURL=webpack://my-to-do-list-/./src/Modules/updateDom.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n//# sourceURL=webpack://my-to-do-list-/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _Modules_updateDom_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Modules/updateDom.js */ \"./src/Modules/updateDom.js\");\n/* harmony import */ var _Modules_updateData_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Modules/updateData.js */ \"./src/Modules/updateData.js\");\n\r\n\r\n\r\n\r\nconst refresh = document.querySelector('.refresh')\r\nconst submit = document.querySelector('.form')\r\n;(0,_Modules_updateDom_js__WEBPACK_IMPORTED_MODULE_1__.deployData)()\r\n\r\n\r\nrefresh.addEventListener('click', ()=>{\r\n\t;(0,_Modules_updateDom_js__WEBPACK_IMPORTED_MODULE_1__.deployData)()\r\n})\r\n\r\nsubmit.addEventListener('submit', (e) => {\r\n  e.preventDefault()\r\n  ;(0,_Modules_updateData_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])()\r\n})\n\n//# sourceURL=webpack://my-to-do-list-/./src/index.js?");
 
 /***/ })
 
