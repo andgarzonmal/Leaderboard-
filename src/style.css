@@ -71,6 +71,8 @@ body {
 
 .list-item {
   padding: 5px 0;
+  font-size: 25px;
+  color: aliceblue;
 }
 
 .add-header {
