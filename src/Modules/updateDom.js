@@ -11,7 +11,7 @@ export const addhtml = ({ user, score }) => `
 export const deployData = async () => {
   const { result } = await getData();
   scoreList.innerHTML = '';
-  let sorted = result.sort((a, b) => b.score - a.score)
+  const sorted = result.sort((a, b) => b.score - a.score);
   sorted.forEach((element) => {
     scoreList.insertAdjacentHTML('beforeend', addhtml(element));
   });
