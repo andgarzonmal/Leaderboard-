@@ -49,7 +49,7 @@ body {
   background-color: #8da2ff;
 }
 
-.scores-list > *:nth-child(even){
+.scores-list > *:nth-child(even) {
   background-color: #acbaff;
 }
 
@@ -94,6 +94,3 @@ body {
   width: 20%;
   align-self: flex-end;
 }
-
-
-
