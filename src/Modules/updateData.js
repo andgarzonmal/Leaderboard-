@@ -12,7 +12,7 @@ const uploadedData = () => {
 };
 
 const updateData = async () => {
-  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/oeMwIfz4iX4Uqc9HOtgF/scores', {
+  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/5KfonS3pOsrGQDeYthts/scores', {
     method: 'POST',
     body: JSON.stringify(uploadedData()),
     headers: {
