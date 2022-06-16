@@ -1,6 +1,16 @@
 import './style.css';
-import { getData, deployData } from './Modules/getData.js';
+import { deployData } from './Modules/updateDom.js';
+import updateData from './Modules/updateData.js';
 
-console.log(deployData())
+const refresh = document.querySelector('.refresh');
+const submit = document.querySelector('.form');
+deployData();
 
+refresh.addEventListener('click', () => {
+  deployData();
+});
 
+submit.addEventListener('submit', (e) => {
+  e.preventDefault();
+  updateData();
+});
